@@ -5,16 +5,16 @@ import android.os.Parcelable;
 
 public class Subject implements Parcelable {
     private String mName;
-    private Integer mMark;
+    private String mMark;
 
-    public Subject(String name, Integer mark) {
+    public Subject(String name, String mark) {
         mName = name;
         mMark = mark;
     }
 
     public Subject(Parcel parcel) {
         mName = parcel.readString();
-        mMark = parcel.readInt();
+        mMark = parcel.readString();
     }
 
     public static final Creator<Subject> CREATOR = new Creator<Subject>() {
@@ -37,11 +37,11 @@ public class Subject implements Parcelable {
         this.mName = mName;
     }
 
-    public Integer getmMark() {
+    public String getmMark() {
         return mMark;
     }
 
-    public void setmMark(Integer mMark) {
+    public void setmMark(String mMark) {
         this.mMark = mMark;
     }
 
@@ -53,7 +53,11 @@ public class Subject implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(mName);
-        parcel.writeInt(mMark);
+        parcel.writeString(mMark);
+    }
 
+    @Override
+    public String toString() {
+        return mName + ": " + mMark;
     }
 }

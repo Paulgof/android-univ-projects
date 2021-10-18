@@ -6,13 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -28,42 +26,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_ll);
 
-        // ((LinearLayout) findViewById(R.id.student_form_ll)).setVisibility(
-        //         ((Button) findViewById(R.id.bAddStudent)).getVisibility()
-        // );
         ((LinearLayout) findViewById(R.id.student_form_ll)).setVisibility(View.GONE);
         ((Button) findViewById(R.id.bAddStudent)).setVisibility(View.GONE);
 
     }
-
-    final String[] subjectsNames = new String[] {"Матан", "Алгебра", "Программирование", "Ин.яз."};
-
-    final String[] catNames = new String[] {
-        "Барсик", "Рыжик", "Мурка", "Пятнышко", "Барон", "Марс",
-        "Лемур", "Игорь", "Усатик", "Рыкса", "Фиалка", "Мурла",
-        "Няша", "Неко", "Охотник", "Зубастик", "Обормот"
-    };
-
-//    public void createList1(View view) {
-//        ListView listView = findViewById(R.id.myList);
-//
-//        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-//                android.R.layout.simple_list_item_1, catNames);
-//
-//        listView.setAdapter(adapter);
-//
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                Toast.makeText(
-//                        getApplicationContext(),
-//                        ((TextView) view).getText(),
-//                        Toast.LENGTH_SHORT
-//                ).show();
-//            }
-//        });
-//
-//    }
 
     public void studentListCreate(View view) {
         ListView listView = findViewById(R.id.myList2);
@@ -81,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         AdapterView.OnItemClickListener clStudent = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(MainActivity.this, StundentActivity.class);
+                Intent intent = new Intent(MainActivity.this, StudentActivity.class);
                 intent.putExtra("Student", filteredStudentList.get(i));
                 startActivity(intent);
             }

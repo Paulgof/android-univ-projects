@@ -82,4 +82,8 @@ public class Student implements Parcelable {
     public void setGroup(String mGroup) {
         this.mGroup = mGroup;
     }
+
+    public ArrayList<Subject> getmSubjects() {
+        return mSubjects;
+    }
 }
