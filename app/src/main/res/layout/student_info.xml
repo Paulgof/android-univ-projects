@@ -93,5 +93,27 @@
             android:layout_height="wrap_content"
             android:onClick="addSubject"
             android:text="Добавить предмет" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="clSave"
+                android:text="Сохранить" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="clCancel"
+                android:text="Отмена" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

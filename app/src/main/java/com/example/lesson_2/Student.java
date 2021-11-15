@@ -56,6 +56,7 @@ public class Student implements Parcelable {
                 "ФИО:'" + mFIO + '\'' +
                 ", факультет: '" + mFaculty + '\'' +
                 ", группа: '" + mGroup + '\'' +
+                ", subjects count: " + mSubjects.size() +
                 '}';
     }
 

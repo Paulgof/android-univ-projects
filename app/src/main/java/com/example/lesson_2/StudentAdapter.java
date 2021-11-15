@@ -14,6 +14,12 @@ public class StudentAdapter extends BaseAdapter {
     ArrayList<Student> students = new ArrayList<>();
     Context ctx;
     LayoutInflater lInflater;
+    Integer mSelected = null;
+
+    public void setSelectedPosition(Integer position) {
+        if (isEqualSelected(position)) mSelected = null;
+        else mSelected = position;
+    }
 
     StudentAdapter(Context context, ArrayList<Student> students) {
         ctx = context;
@@ -36,6 +42,14 @@ public class StudentAdapter extends BaseAdapter {
         return i;
     }
 
+    public Integer getmSelected() {
+        return mSelected;
+    }
+
+    public void setmSelected(Integer mSelected) {
+        this.mSelected = mSelected;
+    }
+
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         View new_view = lInflater.inflate(R.layout.student_element, viewGroup, false);
@@ -50,6 +64,14 @@ public class StudentAdapter extends BaseAdapter {
                     .setBackgroundResource(R.color.even_element);
         }
 
+        // TODO 01:00
+
         return new_view;
+    }
+
+    boolean isEqualSelected(int position) {
+        return mSelected != null &&
+                students.get(position).getFaculty().equals(students.get(mSelected).getFaculty()) &&
+                students.get(position).getGroup().equals(students.get(mSelected).getGroup());
     }
 }

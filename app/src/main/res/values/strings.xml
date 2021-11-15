@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Lesson_2</string>
+    <integer-array
+        name="marks">
+        <item>5</item>
+        <item>4</item>
+        <item>3</item>
+        <item>2</item>
+    </integer-array>
 </resources>

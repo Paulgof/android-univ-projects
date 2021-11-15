@@ -41,7 +41,7 @@ public class SubjectAdapter extends BaseAdapter {
         View new_view = lInflater.inflate(R.layout.subject_element, viewGroup, false);
         if (subjects.isEmpty()) return new_view;
 
-        ((TextView) new_view.findViewById(R.id.subject_name)).setText(subjects.get(i).getmName());
+        ((TextView) new_view.findViewById(R.id.info_subject_name)).setText(subjects.get(i).getmName());
         ((TextView) new_view.findViewById(R.id.subject_mark)).setText(subjects.get(i).getmMark());
 
         if (i % 2 != 0) {
